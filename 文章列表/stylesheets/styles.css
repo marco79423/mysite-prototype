@@ -1,0 +1,355 @@
+html {
+    font-size: 16px;
+    /*color: #555;*/
+    background: #505050;
+}
+
+a {
+    color: #009ced;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0081c3;
+    text-decoration: none;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.page-header {
+    height: 90px;
+    background: #388ca8;
+}
+
+.page-header h1 {
+    margin: 0;
+}
+
+.page-header a{
+    color: #ffffff
+}
+
+/*.top-menu {*/
+/*background: #ff9204;*/
+/*height: 36px;*/
+/*}*/
+
+/*.top-menu ul {*/
+/*margin: 0;*/
+/*padding: 0;*/
+/*list-style: none;*/
+/*float: right;*/
+/*}*/
+
+/*.top-menu li {*/
+/*float: left;*/
+/*}*/
+
+/*.top-menu a {*/
+/*display: block;*/
+/*width: 90px;*/
+/*height: 36px;*/
+/*line-height: 36px;*/
+/*color: #fff;*/
+/*text-align: center;*/
+/*text-decoration: none;*/
+/*}*/
+
+/*.top-menu a:hover {*/
+/*background: #ff6204;*/
+/*}*/
+
+/*.top-menu i {*/
+/*margin-right: 5px;*/
+/*}*/
+
+/*.top-block {*/
+/*background: #fada;*/
+/*height: 80px;*/
+/*}*/
+
+/*.top-block .container {*/
+/*padding: 9px 0;*/
+/*position: relative;*/
+/*}*/
+
+/*.top-block h1.logo {*/
+/*margin: 0;*/
+/*}*/
+
+/*.top-block h1.logo a {*/
+/*display: block;*/
+/*width: 250px;*/
+/*height: 62px;*/
+/*background: url('../images/logo@2x.png') no-repeat;*/
+/*background-size: 100% 100%;*/
+/*overflow: hidden;*/
+/*text-indent: 110%;*/
+/*white-space: nowrap;*/
+/*}*/
+
+/*.top-block .search {*/
+/*position: absolute;*/
+/*right: 0;*/
+/*bottom: 9px;*/
+/*}*/
+
+/*.top-block .search i {*/
+/*position: relative;*/
+/*left: 28px;*/
+/*}*/
+
+/*.top-block .search input {*/
+/*width: 250px;*/
+/*height: 28px;*/
+/*padding-left: 35px;*/
+/*line-height: 28px;*/
+/*border: 2px solid #ddd;*/
+/*border-radius: 16px;*/
+/*}*/
+
+/*.top-block .search input:focus {*/
+/*outline: none;*/
+/*border-color: #009ced;*/
+/*box-shadow: #009ced 0 0 2px;*/
+/*}*/
+
+/*.main-menu {*/
+/*height: 38px;*/
+/*border-top: 1px solid #ddd;*/
+/*border-bottom: 1px solid #ddd;*/
+/*}*/
+
+/*.main-menu ul {*/
+/*margin: 0;*/
+/*padding: 0;*/
+/*list-style: none;*/
+/*}*/
+
+/*.main-menu li {*/
+/*float: left;*/
+/*width: 20%;*/
+/*}*/
+
+/*.main-menu a {*/
+/*color: #3d4143;*/
+/*display: block;*/
+/*height: 38px;*/
+/*line-height: 38px;*/
+/*text-align: center;*/
+/*}*/
+
+/*.main-menu a:hover {*/
+/*color: #ffffff;*/
+/*background: #ff9204;*/
+/*}*/
+
+/*.index-image {*/
+/*height: 400px;*/
+/*background: url('../images/index-image.jpg') center center no-repeat;*/
+/*background-size: cover;*/
+/*position: relative;*/
+/*}*/
+
+/*.index-image h2 {*/
+/*font-size: 50px;*/
+/*color: #fff;*/
+/*color: rgba(255, 255, 255, 0.8);*/
+/*position: absolute;*/
+/*left: 50%;*/
+/*margin-left: 150px;*/
+/*bottom: 30px;*/
+/*}*/
+
+/*.index-image h2 span {*/
+/*display: block;*/
+/*position: relative;*/
+/*left: 2em;*/
+/*}*/
+
+/*.new-items {*/
+/*padding: 40px 0;*/
+/*}*/
+
+/*.new-items ul {*/
+/*margin: 0;*/
+/*padding: 0;*/
+/*list-style: none;*/
+/*overflow: auto;*/
+/*}*/
+
+/*.new-items li {*/
+/*float: left;*/
+/*width: 340px;*/
+/*}*/
+
+/*.new-items li:not(:first-child) {*/
+/*margin-left: 30px;*/
+/*}*/
+
+/*.featured-item {*/
+/*background: #eee;*/
+/*padding: 40px 0;*/
+/*}*/
+
+/*.featured-item h2 {*/
+/*color: #ff9204;*/
+/*font-size: 2rem;*/
+/*text-align: center;*/
+/*margin: 0 0 30px;*/
+/*}*/
+
+/*.featured-item .featured-item-content {*/
+/*position: relative;*/
+/*padding-left: 400px;*/
+/*overflow: auto;*/
+/*min-height: 240px;*/
+/*}*/
+
+/*.featured-item h3 {*/
+/*margin-top: 0;*/
+/*font-size: 1.5rem;*/
+/*}*/
+
+/*.featured-item h3 + img {*/
+/*position: absolute;*/
+/*top: 0;*/
+/*left: 0;*/
+/*}*/
+
+/*.featured-item .user {*/
+/*margin-top: 30px;*/
+/*float: right;*/
+/*}*/
+
+/*.featured-item .user img {*/
+/*width: 80px;*/
+/*height: 80px;*/
+/*border-radius: 40px;*/
+/*display: inline-block;*/
+/*margin-left: 10px;*/
+/*vertical-align: middle;*/
+/*}*/
+
+/*.news-and-principle {*/
+/*padding: 40px 0;*/
+/*}*/
+
+/*.news-and-principle .container {*/
+/*overflow: auto;*/
+/*}*/
+
+/*.news-and-principle .news {*/
+/*float: left;*/
+/*width: 750px;*/
+/*}*/
+
+/*.news-and-principle .news h2 {*/
+/*display: block;*/
+/*width: 120px;*/
+/*height: 36px;*/
+/*background: url('../images/news-title@2x.png') center center no-repeat;*/
+/*background-size: 100% 100%;*/
+/*text-indent: 110%;*/
+/*overflow: hidden;*/
+/*white-space: nowrap;*/
+/*}*/
+
+/*.news-and-principle .news ul {*/
+/*margin: 0;*/
+/*padding: 0;*/
+/*list-style: none;*/
+/*}*/
+
+/*.news-and-principle .news li {*/
+/*padding: 8px;*/
+/*}*/
+
+/*.news-and-principle .news li:nth-child(even) {*/
+/*background: #f5f5f5;*/
+/*}*/
+
+/*.news-and-principle .news li a {*/
+/*display: block;*/
+/*white-space: nowrap;*/
+/*overflow: hidden;*/
+/*text-overflow: ellipsis;*/
+/*}*/
+
+/*.news-and-principle .news li:not(:first-child) {*/
+/*border-top: #ddd 1px dotted;*/
+/*}*/
+
+/*.news-and-principle .principle {*/
+/*float: right;*/
+/*width: 280px;*/
+/*padding-bottom: 100px;*/
+/*position: relative;*/
+/*background: #5f5547;*/
+/*color: #fff;*/
+/*}*/
+
+/*.news-and-principle .principle h2 {*/
+/*position: absolute;*/
+/*bottom: 0;*/
+/*line-height: 100px;*/
+/*margin: 0 20px;*/
+/*white-space: nowrap;*/
+/*}*/
+
+/*.news-and-principle .principle .principle-content {*/
+/*background: #ff9204;*/
+/*padding: 10px;*/
+/*position: relative;*/
+/*}*/
+
+/*.news-and-principle .principle .principle-content:before {*/
+/*content: "";*/
+/*display: block;*/
+/*position: absolute;*/
+/*border: transparent 8px solid;*/
+/*border-top: #ff9204 8px solid;*/
+/*bottom: -16px;*/
+/*left: 40px;*/
+/*}*/
+
+/*.news-and-principle .principle .li {*/
+/*margin: 10px 0;*/
+/*font-size: 1.2rem;*/
+/*}*/
+
+/*.news-and-principle .principle img {*/
+/*width: 60px;*/
+/*height: 60px;*/
+/*border-radius: 50%;*/
+/*display: inline-block;*/
+/*margin-left: 5px;*/
+/*vertical-align: middle;*/
+/*background: #fff;*/
+/*}*/
+
+/*.page-footer {*/
+/*padding: 40px 0;*/
+/*background: #3d4143;*/
+/*color: white;*/
+/*text-align: center;*/
+/*}*/
+
+/*.page-footer ul {*/
+/*margin: 0;*/
+/*padding: 0;*/
+/*list-style: none;*/
+/*}*/
+
+/*.page-footer li {*/
+/*display: inline;*/
+/*margin: 0 30px;*/
+/*}*/
+
+/*.page-footer .business-hours {*/
+/*display: block;*/
+/*margin: 20px 0;*/
+/*}*/
