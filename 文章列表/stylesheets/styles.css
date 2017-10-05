@@ -102,15 +102,18 @@ a:visited {
     overflow: auto;
 }
 
-.main ul.article-list {
+.main .article-list {
     float: left;
-    margin: 0;
-    padding: 0;
-    list-style: none;
     width: 800px;
 }
 
-.main ul.article-list li:not(:first-child) {
+.main ul.article-container {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main ul.article-container li:not(:first-child) {
     margin-top: 3px;
 }
 
@@ -172,6 +175,40 @@ a:visited {
     margin-top: 1rem;
     font-size: 1.2rem;
     line-height: 1.6rem;
+}
+
+.main .pagination ul {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    float: right;
+}
+
+.main .pagination li {
+    float: left;
+}
+
+.main .pagination li:not(:first-child) {
+    /*margin-left: 12px;*/
+}
+
+.main .pagination li a {
+    display: block;
+    margin-bottom: 32px;
+
+    height: 32px;
+    width: 32px;
+
+    text-align: center;
+    line-height: 32px;
+    font-size: 1.5rem;
+
+    color: #ECECEC;
+    background: #388ca8;
+}
+
+.main .pagination li a:hover {
+    background: #065a76;
 }
 
 .aside {
