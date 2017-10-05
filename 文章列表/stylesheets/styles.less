@@ -15,8 +15,14 @@ a {
 }
 
 .container {
-  width: 1200px;
+  position: relative;
+
+  width: 100vw - 2px;
   margin: 0 auto;
+
+  @media (min-width: 1200px) {
+    width: 1200px;
+  }
 }
 
 .page-header {
@@ -98,7 +104,11 @@ a {
 
   .article-list {
     float: left;
-    width: 800px;
+    width: 100%;
+
+    @media (min-width: 1200px) {
+      width: 800px;
+    }
 
     ul.article-container {
       margin: 0;
@@ -116,7 +126,7 @@ a {
     padding: 32px;
 
     header {
-      h3 {
+      h1 {
         margin: 3px 0;
       }
 
@@ -172,27 +182,37 @@ a {
     margin: 0 auto;
     padding: 0;
     list-style: none;
-    float: right;
+
+    @media (min-width: 1200px) {
+      float: right;
+    }
 
     li {
       float: left;
+      width: 100% / 8;
+      height: 32px;
+
+      @media (min-width: 1200px) {
+        margin-bottom: 32px;
+        width: 32px;
+      }
     }
 
     a {
       display: block;
-      margin-bottom: 32px;
-
-      height: 32px;
-      width: 32px;
-
       text-align: center;
       line-height: 32px;
       font-size: 1.5rem;
 
       color: #ECECEC;
-      background: #1A6E8A;
+      background: #388ca8;
 
       &:hover {
+        background: #065a76;
+      }
+
+      &.active {
+        pointer-events: none;
         background: #065a76;
       }
     }
@@ -201,14 +221,17 @@ a {
 
 .aside {
   float: left;
-  padding: 30px;
 
-  .about-me {
-    position: relative;
+  section {
+    margin: 30px;
     width: 340px;
+  }
+
+  section.about-me {
+    position: relative;
 
     img {
-      display: inline-block;
+      position: absolute;
       width: 90px;
       height: 90px;
       border: 0.1em solid #FFFFFF;
@@ -216,12 +239,10 @@ a {
     }
 
     .profile {
-      display: inline-block;
-      padding: 20px;
-      vertical-align: top;
+      padding-left: 110px;
 
       h3 {
-        margin: 0;
+        margin: 8px 0 0;
       }
 
       ul {
@@ -238,7 +259,7 @@ a {
 
     .contact {
       a {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
       }
 
       li:not(:first-child):before {
@@ -250,16 +271,12 @@ a {
     .motto {
       color: #6f6f6f;
       display: inline-block;
-      width: 340px;
-      margin: 24px 0;
-      padding-left: 16px;
-      border-left: 1px solid #ddd;
+      margin-top: 16px;
+      font-size: 0.8rem;
     }
   }
 
-  .recent-articles {
-    width: 340px;
-
+  section.recent-articles {
     h2 {
       color: #6f6f6f;
       font-size: 1.5em;
@@ -279,9 +296,7 @@ a {
     }
   }
 
-  .additional-links {
-    width: 340px;
-
+  section.additional-links {
     h2 {
       border-bottom: 1px solid #ddd;
       padding-bottom: 10px;
@@ -297,7 +312,7 @@ a {
 
 footer {
   height: 42px;
-  background: #1a6e8a;
+  background: #1A6E8A;
 
   .copyright {
     margin: 0 auto;
