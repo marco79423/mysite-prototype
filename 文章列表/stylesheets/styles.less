@@ -61,39 +61,85 @@ a {
   height: 42px;
   background: #1A6E8A;
 
-  a {
-    display: block;
-    height: 42px;
-    line-height: 42px;
-    padding: 0 16px;
-    font-size: 1.2em;
-    color: #ECECEC;
-    font-weight: 700;
+  .menu-container {
+    a {
+      display: block;
+      height: 42px;
+      line-height: 42px;
+      padding: 0 16px;
+      font-size: 1.2em;
+      color: #ECECEC;
+      font-weight: 700;
 
-    &:hover {
-      background: #065A76;
+      &:hover {
+        background: #065A76;
+      }
     }
-  }
 
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  ul.main-menu {
-    float: left;
-
-    li {
-      float: left;
+    a.menu-toggle {
+      display: none;
     }
-  }
 
-  ul.extra-menu {
-    float: right;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
 
-    li {
+
+    }
+
+    ul.main-menu {
       float: left;
+
+      li {
+        float: left;
+      }
+    }
+
+    ul.extra-menu {
+      float: right;
+
+      li {
+        float: left;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      position: absolute;
+
+      a.menu-toggle {
+        display: block;
+        &:hover {
+          background: none;
+        }
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: none;
+      }
+
+      li {
+        width: 100%;
+
+        a {
+          background: #388ca8;
+        }
+      }
+
+      &:hover {
+        width: 140px;
+
+        ul {
+          display: block;
+        }
+
+        ul.extra-menu {
+          border-top: 3px #065A76 solid;
+        }
+      }
     }
   }
 }
