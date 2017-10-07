@@ -242,13 +242,14 @@ ul {
   .aside {
     float: left;
 
+    @media (max-width: 1200px) {
+      width: 100%;
+      background: #1A6E8A;
+    }
+
     section {
       margin: 30px;
       width: 340px;
-
-      @media (max-width: 1200px) {
-        width: 100%;
-      }
     }
 
     section.about-me {
@@ -270,12 +271,20 @@ ul {
         h3 {
           margin: 0;
           font-size: 1rem;
+
+          @media (max-width: 1200px) {
+            color: #ECECEC;
+          }
         }
 
         .motto {
           margin-top: 8px;
           color: #6F6F6F;
           display: inline-block;
+
+          @media (max-width: 1200px) {
+            color: #ECECEC;
+          }
         }
 
         ul.contact {
@@ -285,9 +294,32 @@ ul {
           li {
             float: left;
 
-            &:not(:first-child):before {
-              content: "|";
-              margin: 0 3px;
+            &:not(:first-child) {
+              margin-left: 4px;
+            }
+
+            a {
+              display: block;
+              width: 24px;
+              height: 24px;
+              text-indent: 110%;
+              overflow: hidden;
+
+
+              &.i-facebook {
+                background: url("../images/icons/i-facebook.svg") no-repeat;
+                background-size: 100%;
+              }
+
+              &.i-linkedin {
+                background: url("../images/icons/i-linkedin.svg") no-repeat;
+                background-size: 100%;
+
+              }
+              &.i-github {
+                background: url("../images/icons/i-github.svg") no-repeat;
+                background-size: 100%;
+              }
             }
           }
         }
@@ -295,6 +327,10 @@ ul {
     }
 
     section.recent-articles {
+      @media (max-width: 1200px) {
+        display: none;
+      }
+
       h2 {
         color: #6F6F6F;
         font-size: 1.5em;
@@ -309,6 +345,10 @@ ul {
     }
 
     section.additional-links {
+      @media (max-width: 1200px) {
+        display: none;
+      }
+
       h2 {
         border-bottom: 1px solid #DDDDDD;
         padding-bottom: 10px;
