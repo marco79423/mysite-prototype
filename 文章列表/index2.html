@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>兩大類 x 兩大類 = 四大類</title>
+    <link rel="stylesheet" href="stylesheets/normalize.css"/>
+    <link rel="stylesheet/less" type="text/css" href="stylesheets/styles.less"/>
+    <link rel="stylesheet/css" type="text/css" href="stylesheets/pygments.css"/>
+    <script src="scripts/less.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <header class="page-header">
+        <h1 class="title">
+            <a href="#"><img src="images/logo.png"/>兩大類 x 兩大類 = 四大類</a>
+        </h1>
+    </header>
+    <nav class="page-nav">
+        <div class="menu-container">
+            <a class="menu-toggle" href="#">選單</a>
+            <ul class="main-menu">
+                <li><a href="#">Python</a></li>
+                <li><a href="#">專案作品</a></li>
+                <li><a href="#">程式設計</a></li>
+                <li><a href="#">UNIX & 工具</a></li>
+                <li><a href="#">遊記</a></li>
+                <li><a href="#">胡言亂語</a></li>
+            </ul>
+            <ul class="extra-menu">
+                <li><a href="#">閱讀計劃</a></li>
+                <li><a href="#">實驗室</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="page-main">
+        <section class="article-detail">
+            <article>
+                <header>
+                    <h1><a href="">淺談 regex 及其應用</a></h1>
+                    <ul class="metadata">
+                        <li>分類：
+                            <ul class="categories">
+                                <li><a href="#">程式設計</a></li>
+                                <li><a href="#">Python</a></li>
+                            </ul>
+                        </li>
+                        <li>作者：兩大類</li>
+                        <li>發表時間：2015/10/04</li>
+                        <li>最後更新：2015/11/22</li>
+                    </ul>
+                </header>
+                <div class="content">
+                    <p>先別管 regex 了，你有用 Ctrl + F 搜尋過文章嗎？</p>
+                    <p>一篇網頁文章中，搜尋「小雞」這個關鍵字，如果文章有出現這樣的字眼，就會移到出現「小雞」的位置；如果沒有，它就會說找不到。</p>
+                    <p>一個簡單好用的功能。</p>
+                    <p>...</p>
+                    <p>有了 regex ，我們想要知道小雞的體重便容易許多了。</p>
+                    <div class="section"><h2>regex 語法簡介</h2>
+                        <p>regex 用法規則不少，小弟我把它大致區分為四種類別，分別是「選擇」、「次數」、「錨點」和「截取」類。</p>
+                        <div class="section"><h3>選擇</h3>
+                            <p>首先是「選擇」類，regex 可以在不知道準確字串的情況下對內文進行搜尋，不知道實際是小「白」雞、還是小「小」雞也沒關係，都可以搜尋得到，在此例中，我們可以這麼做：</p>
+                            <p>...</p>
+                            <p>選擇的用法大概就這樣，非常單純。不過在實際的情況下，還是有些便利的技巧，比如說:</p>
+                            <pre class="literal-block">[a-zA-Z0-9]</pre>
+                            <p>而有些太長用的字，甚至可以直接利用特殊的符號代表。下面列一個簡單的列表：</p>
+                            <table border="1" class="docutils">
+                                <colgroup>
+                                    <col width="23%">
+                                    <col width="77%">
+                                </colgroup>
+                                <tbody valign="top">
+                                <tr>
+                                    <td>regex 語法</td>
+                                    <td>意義</td>
+                                </tr>
+                                <tr>
+                                    <td>.</td>
+                                    <td>任意字元</td>
+                                </tr>
+                                <tr>
+                                    <td>\d</td>
+                                    <td>數字(digit)，如 0 到 9</td>
+                                </tr>
+                                <tr>
+                                    <td>\D</td>
+                                    <td>非數字</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="section" id="python-re"><h2>Python 的 re 模組</h2>
+                        <p>要同時找多個符合的結果，則可以使用 re.findall 函式：</p>
+                        <div class="highlight"><pre><span></span><span class="kn">import</span> <span
+                                class="nn">re</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">"小雞 白雞 黃雞 綠雞"</span>
+
+
+<span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span
+                                    class="s2">".雞"</span><span class="p">,</span> <span class="n">text</span><span
+                                    class="p">)</span>  <span class="c1"># ['小雞', '白雞', '黃雞', '綠雞']</span>
+</pre>
+                        </div>
+                        <p>若需要多次同一 regex 搜尋，可以使用 re.compile 函式預先處理 regex 以增加效能。</p>
+                        <div class="highlight"><pre><span></span><span class="kn">import</span> <span
+                                class="nn">re</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">"小雞 白雞 黃雞 綠雞"</span>
+
+<span class="n">regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span
+                                    class="p">(</span><span class="sa">r</span><span class="s2">".雞"</span><span
+                                    class="p">)</span>
+<span class="n">regex</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span
+                                    class="n">text</span><span class="p">)</span>  <span class="c1"># ['小雞', '白雞', '黃雞', '綠雞']</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">"黑雞 青雞 灰雞 橙雞"</span>
+<span class="n">regex</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span
+                                    class="n">text</span><span class="p">)</span>  <span class="c1"># ['黑雞', '青雞', '灰雞', '橙雞']</span>
+</pre>
+                        </div>
+                        <p>由於 regex 相當有用，所以無論是透過第三方函式庫，如 C++ 的 Qt、boost 等或是語言內建，像是 Perl、Javascript、C++11
+                            等，現代的程式語言幾乎都能找到辦法使用 regex，舉幾個例子：</p>
+                        <p>Javascript:</p>
+                        <div class="highlight"><pre><span></span><span class="kd">var</span> <span
+                                class="nx">text</span> <span class="o">=</span> <span
+                                class="s2">"…… 小雞 30 公克重 ……"</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">re</span> <span class="o">=</span> <span
+                                    class="sr">/小雞 (\d+) 公克重/</span><span class="p">;</span>
+
+<span class="nx">matches</span> <span class="o">=</span> <span class="nx">re</span><span class="p">.</span><span
+                                    class="nx">exec</span><span class="p">(</span><span class="nx">text</span><span
+                                    class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span
+                                    class="nx">matches</span><span class="p">[</span><span class="mi">0</span><span
+                                    class="p">]);</span> <span class="c1">// 小雞 30 公克重</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span
+                                    class="nx">matches</span><span class="p">[</span><span class="mi">1</span><span
+                                    class="p">]);</span> <span class="c1">// 30</span>
+</pre>
+                        </div>
+                    </div>
+                    <div class="section"><h2>常見應用</h2>
+                        <p>說了這麼多 regex 的用法，我們到底可以拿 regex 做什麼用呢？</p>
+                        <div class="section"><h3>抓取特定格式的字串</h3>
+                            <p>抓取特定格式的字串，大概就是最常見的應用情景，通常會順帶截取字串裡的關鍵資訊。</p>
+                            <div class="highlight"><pre><span></span><span class="kn">import</span> <span
+                                    class="nn">re</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">"…… 小雞 300 公斤重 ……"</span>
+<span class="n">match_object</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span
+                                        class="n">search</span><span class="p">(</span><span class="sa">r</span><span
+                                        class="s2">"小雞 (\d+) 公斤重"</span><span class="p">,</span> <span
+                                        class="n">text</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">match_object</span> <span class="ow">and</span> <span
+                                        class="nb">int</span><span class="p">(</span><span class="n">match_object</span><span
+                                        class="o">.</span><span class="n">group</span><span class="p">(</span><span
+                                        class="mi">1</span><span class="p">))</span> <span class="o">&gt;</span> <span
+                                        class="mi">100</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">"好肥的小雞……開始減肥！"</span><span class="p">)</span>
+</pre>
+                            </div>
+                            <p>在這個例子中，小雞的體重就成功的被我抓出來，之後的減肥計劃就可以順利展開了。</p>
+                            <div class="note"><p class="first admonition-title">Note</p>
+                                <p>有些網站會為了讓比較弱的爬蟲自爆，又或是為了節省頻寬。會在不影響網站顯示的情況下，故意讓部分的標籤的 end tag 去掉。如果單純以普通的 HTML parser
+                                    來處理這類型的網站時，爬蟲就會死給你看。</p>
+                                <p>為了不要讓這些網站的奸計得逞，為了我們看漫畫的權益，很多情況下，除了用專門處理的工具像是 BeautifulSoup 外，也可以直接使用 regex 來解決。</p>
+                                <pre class="literal-block">&lt;img src="([^"]+)"&gt;
+</pre>
+                                <p class="last">(而且效能似乎較好)</p></div>
+                        </div>
+                        <div class="section"><h3>驗證格式</h3>
+                            <p>我們也可以用 regex 來驗證某段文字的格式，這也是相當常用的做法。除了剛才見到的 Email 格式，也能用來驗證時間的格式、IP 的格式、URL
+                                的格式等。許多時候，我們其實可以不用自己實際去寫這些對應的 regex，善用 Google 搜尋，可以節省自己許多力氣(其實 <a
+                                        class="reference external" href="http://www.regexr.com/">RegExr</a>
+                                就有提供很多例子可以使用了)。</p>
+                            <div class="highlight"><pre><span></span><span class="sd">"""</span>
+<span class="sd">驗證是不是兩大類寫的文章</span>
+<span class="sd">"""</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">"..."</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span
+                                        class="s2">"雞|chicken|喵"</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">"可能是？"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">"也許不是？"</span><span class="p">)</span>
+</pre>
+                            </div>
+                            <div class="note"><p class="first admonition-title">Note</p>
+                                <p class="last">雖然 regex 可以做的事很多，但很多時候，善用第三方才是最佳選擇。比方說驗證時間請愛用 python-dateutil</p></div>
+                        </div>
+                        <div class="section"><h3>編輯器上的應用</h3>
+                            <p>說個題外話，regex 也不只能在程式中用到，事實上，我們在「寫程式」本身，也可以用到 regex 實用的功能。現在很多編輯器，包含 Vim、Sublime Text
+                                都可以使用，雖然語法可能會有些許的變化，但概念都是一樣的。</p>
+                            <p>好比說之前碰過一個例子，專案裡有關圖表的變數命名方式與同事沒有協調好，結果同時出現 piechart 和 pie_chart 兩種命名，結果經過一些「親密交流」後，終於決定用
+                                pie_chart 來命名……碰到這種問題時，也可以用 regex 解決。</p> <img
+                                    alt="https://api.marco79423.net/media/images/淺談-regex-及其應用/1.png"
+                                    src="https://api.marco79423.net/media/images/淺談-regex-及其應用/1.png">
+                            <p>輸下 Ctrl + h，然後確認 Regular Expression 模式有開啟(最左邊的圖示)。</p> <img
+                                    alt="https://api.marco79423.net/media/images/淺談-regex-及其應用/2.png"
+                                    src="https://api.marco79423.net/media/images/淺談-regex-及其應用/2.png">
+                            <p>按下 Replace All。</p> <img
+                                    alt="https://api.marco79423.net/media/images/淺談-regex-及其應用/3.png"
+                                    src="https://api.marco79423.net/media/images/淺談-regex-及其應用/3.png">
+                            <p>搞定！</p></div>
+                    </div>
+                    <div class="section"><h2>結語</h2>
+                        <p>本來還想寫一下 regex 實作相關的介紹，不過我覺得再加內容大概就沒人想看了吧？</p>
+                        <p>總之，這篇介紹了 regex 的簡單用法和我對 regex 應用的心得，沒有太過深入討論 regex
+                            太多詳細的規則語法，畢竟雖然規則很多，但多數都不太常用，我覺得需要時再上網查即可。在這個網路的時代，很多時候都不需要死背硬記，畢竟人的腦袋就這麼小小一顆，何必老是欺負它呢？</p>
+                        <p>以上。</p></div>
+                </div>
+            </article>
+        </section>
+        <aside class="aside">
+            <section class="about-me">
+                <img src="images/marco.jpg" alt="兩大類">
+                <div class="profile">
+                    <h3>兩大類</h3>
+                    <div class="motto">
+                        <div>能站著就別坐著，能走路就別騎車</div>
+                        <div>保持站起來的毅力和一步一腳印的耐心</div>
+                    </div>
+                    <ul class="contact">
+                        <li><a class="i-facebook" href="#">facebook</a></li>
+                        <li><a class="i-linkedin" href="#">GitHub</a></li>
+                        <li><a class="i-github" href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="recent-articles">
+                <h2>近期文章</h2>
+                <ul>
+                    <li><a href="#">2017 高雄散步</a></li>
+                    <li><a href="#">學習筆記 - DCI</a></li>
+                    <li><a href="#">使用 Python 的生活日常系列 [2] - 超簡易資料分析</a></li>
+                    <li><a href="#">筆記 - 資料視覺化之理論</a></li>
+                    <li><a href="#">小喵的故事3 - 天堂篇</a></li>
+                </ul>
+            </section>
+            <section class="additional-links">
+                <h2></h2>
+                <ul>
+                    <li><a href="#">所有文章列表</a></li>
+                </ul>
+            </section>
+        </aside>
+    </div>
+    <footer class="page-footer">
+        <div class="copyright">Copyright © 2017 - 兩大類</div>
+    </footer>
+</div>
+</body>
+</html>
