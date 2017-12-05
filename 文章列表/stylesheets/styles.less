@@ -200,6 +200,44 @@ ul {
         }
       }
 
+      .tip {
+        position: relative;
+        display: inline-block;
+
+        &:hover {
+          cursor: pointer;
+          &:before, &:after {
+            opacity: 1;
+          }
+        }
+
+        &:before {
+          content: attr(data-tooltip);
+          background: #388ca8;
+          color: #fff;
+          padding: 5px;
+          position: absolute;
+          left: 100%;
+          top: -30%;
+          margin-left: 16px;
+          white-space: pre;
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          border: 8px solid transparent;
+          border-right-color: #388ca8;
+        }
+
+        &:before, &:after {
+          opacity: 0;
+          transition: opacity .3s ease-out;
+        }
+      }
+
       .chicken {
         margin-bottom: -0.4em;
 
