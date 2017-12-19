@@ -4,38 +4,73 @@
 @color-teal-900: #004D40;
 @color-teal-A700: #00BFA5;
 
+@color-cyan-50: #E0F7FA;
+@color-cyan-600: #00ACC1;
+@color-cyan-700: #0097A7;
+@color-cyan-800: #00838F;
+@color-cyan-900: #006064;
+@color-cyan-A700: #00B8D4;
+
+@color-pink-50: #FCE4EC;
+@color-pink-600: #D81B60;
+@color-pink-700: #C2185B;
+@color-pink-800: #AD1457;
+@color-pink-900: #880E4F;
+@color-pink-A700: #C51162;
+
+
 @color-grey-50: #FAFAFA;
 @color-grey-200: #EEEEEE;
 @color-grey-300: #E0E0E0;
-@color-grey-600: #616161;
-@color-grey-700: #212121;
+@color-grey-600: #757575;
+@color-grey-700: #616161;
 @color-grey-900: #212121;
 
 @font-color: @color-grey-900;
 @font-size: 16px;
 @font-family: Arial, Microsoft JhengHei, Open Sans, sans-serif;
 
-@link-color: @color-teal-600;
-@link-hover-color: @color-teal-900;
+@link-color: @color-cyan-700;
+@link-hover-color: @color-cyan-900;
 
-@link-button-color: @color-grey-50;
-@link-button-background: @color-teal-800;
+@page-background: @color-grey-700;
 
-
-@page-background: @color-grey-600;
-
-@page-header-background: @color-teal-600;
+@page-header-background: @color-cyan-600;
 @page-header-title-color: @color-grey-50;
 
-@page-nav-background: @color-teal-800;
+@page-nav-background: @color-cyan-800;
 @page-nav-menu-color: #ECECEC;
 @page-nav-menu-background: @page-nav-background;
-@page-nav-menu-hover-background: @color-teal-900;
-@page-nav-menu-dropdown-background: @color-teal-600;
-@page-nav-menu-dropdown-border-color: @color-teal-800;
+@page-nav-menu-hover-background: @color-cyan-900;
+@page-nav-menu-dropdown-background: @color-cyan-600;
+@page-nav-menu-dropdown-border-color: @color-cyan-800;
 
 @page-main-background: @color-grey-200;
-@page-footer-background: @color-teal-800;
+@page-main-pagination-color: @color-grey-200;
+@page-main-pagination-background: @color-cyan-700;
+@page-main-pagination-hover-background: @color-cyan-900;
+@page-main-pagination-active-background: @color-cyan-900;
+
+@page-content-background: white;
+@page-content-metadata-tip-color: #fff;
+@page-content-metadata-tip-background: @color-cyan-600;
+@page-content-header-color: @color-grey-700;
+@page-content-block-color: white;
+@page-content-block-background: @color-cyan-600;
+@page-content-block-border-color: #ccc;
+@page-content-doctest-block-color: #fff;
+@page-content-doctest-block-background: #6D6D6D;
+@page-content-note-background: #ECECEC;
+@page-content-note-border-color: #ccc;
+@page-content-note-title-color: @color-cyan-800;
+@page-content-table-header-background: @color-cyan-600;
+
+@page-aside-background: @color-grey-200;
+@page-aside-darker-background: @color-grey-600;
+@page-aside-section-title-color: @color-grey-700;
+@page-aside-section-border-color: @color-grey-200;
+
+@page-footer-background: @color-cyan-800;
 @page-footer-copyright-color: #ECECEC;
 
 html {
@@ -207,7 +242,7 @@ ul {
   }
 
   article {
-    background: white;
+    background: @page-content-background;
     padding: 32px;
 
     header {
@@ -254,8 +289,8 @@ ul {
 
         &:before {
           content: attr(data-tooltip);
-          background: @color-teal-600;
-          color: #fff;
+          background: @page-content-metadata-tip-background;
+          color: @page-content-metadata-tip-color;
           padding: 5px;
           position: absolute;
           left: 100%;
@@ -270,7 +305,7 @@ ul {
           width: 0;
           height: 0;
           border: 8px solid transparent;
-          border-right-color: @color-teal-600;
+          border-right-color: @color-cyan-600;
         }
 
         &:before, &:after {
@@ -301,11 +336,6 @@ ul {
         height: 0;
       }
 
-      a, a:visited, a:hover {
-        color: @color-teal-600;
-        text-decoration: none;
-      }
-
       header {
         margin-bottom: 2rem;
 
@@ -326,7 +356,7 @@ ul {
       }
 
       h2, h3, h4, h5 {
-        color: #505050;
+        color: @page-content-header-color;
       }
 
       h2 {
@@ -375,17 +405,17 @@ ul {
       pre {
         font-size: 1.2rem;
         font-family: Consolas, Arial, Microsoft JhengHei;
-        color: white;
-        background-color: @color-teal-600;
-        border: 1px solid #ccc;
+        color: @page-content-block-color;
+        background-color: @page-content-block-background;
+        border: 1px solid @page-content-block-border-color;
         padding: 0.7rem;
         margin-bottom: 1rem;
         white-space: pre-wrap;
 
         &.doctest-block {
           border: 0;
-          background-color: #6D6D6D;
-          color: #fff;
+          background-color: @page-content-doctest-block-background;
+          color: @page-content-doctest-block-color;
         }
       }
 
@@ -413,7 +443,7 @@ ul {
         width: 100%;
 
         th {
-          background: @color-teal-600;
+          background: @page-content-table-header-background;
           color: white;
           padding: 0.7rem;
           font-size: 1.2rem;
@@ -434,16 +464,16 @@ ul {
       }
 
       .note {
-        background-color: #ECECEC;
+        background-color: @page-content-note-background;
         padding: 0.1rem 0.7rem 0.7rem 0.7rem;
         margin-bottom: 1rem;
-        border: 1px solid #ccc;
+        border: 1px solid @page-content-note-border-color;
 
         /*解決 note 的問題*/
         p.first {
           font-size: 1.2rem;
           font-weight: bold;
-          color: @color-teal-600;
+          color: @page-content-note-title-color;
           margin-bottom: 0.1rem;
         }
 
@@ -459,21 +489,6 @@ ul {
         .fb-share-button {
           bottom: 5px;
           margin-right: 5px;
-        }
-      }
-
-      .series-block {
-        background: #ECECEC;
-        padding: 20px;
-        margin-bottom: 20px;
-
-        .title {
-          font-weight: 700;
-          margin-bottom: 30px;
-        }
-
-        div:not(:first-child) {
-          margin-top: 10px;
         }
       }
     }
@@ -505,31 +520,40 @@ ul {
       line-height: 32px;
       font-size: 1.5rem;
 
-      color: #ECECEC;
-      background: @color-teal-600;
+      color: @page-main-pagination-color;
+      background: @page-main-pagination-background;
 
       &:hover {
-        background: @color-teal-900;
+        background: @page-main-pagination-hover-background;
       }
 
       &.active {
         pointer-events: none;
-        background: @color-teal-900;
+        background: @page-main-pagination-active-background;
       }
     }
   }
 
   .aside {
     float: left;
+    background: @page-aside-background;
 
     @media (max-width: 1200px) {
       width: 100%;
-      background: @color-teal-800;
+      background: @page-aside-darker-background;
     }
 
     section {
       margin: 30px;
       width: 340px;
+
+      h2 {
+        color: @page-aside-section-title-color;
+        font-size: 1.5em;
+        font-weight: 700;
+        border-bottom: 1px solid @page-aside-section-border-color;
+        padding-bottom: 10px;
+      }
     }
 
     section.about-me {
@@ -539,7 +563,7 @@ ul {
         position: absolute;
         width: 90px;
         height: 100%;
-        border: 0.1em solid #FFFFFF;
+        border: 0.1em solid @color-grey-50;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
       }
 
@@ -553,7 +577,7 @@ ul {
           font-size: 1rem;
 
           @media (max-width: 1200px) {
-            color: #ECECEC;
+            color: @color-grey-50;
           }
         }
 
@@ -563,7 +587,7 @@ ul {
           display: inline-block;
 
           @media (max-width: 1200px) {
-            color: #ECECEC;
+            color: @color-grey-50;
           }
         }
 
@@ -610,14 +634,6 @@ ul {
         display: none;
       }
 
-      h2 {
-        color: #6F6F6F;
-        font-size: 1.5em;
-        font-weight: 700;
-        border-bottom: 1px solid #DDDDDD;
-        padding-bottom: 10px;
-      }
-
       li:not(:first-child) {
         margin-top: 8px;
       }
@@ -626,11 +642,6 @@ ul {
     section.additional-links {
       @media (max-width: 1200px) {
         display: none;
-      }
-
-      h2 {
-        border-bottom: 1px solid #DDDDDD;
-        padding-bottom: 10px;
       }
     }
   }
